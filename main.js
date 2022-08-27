@@ -1,8 +1,8 @@
 console.log('main.js success');
 
 const APP_ID = '40d9ba1e0bbd81c9f28c60308da60a39';
-const LAT = -24.184014695495744;
-const LON = -65.33153392590026;
+const LAT = '-24.184014695495744';
+const LON = '-65.33153392590026';
 
 const $ = (element) => document.getElementById(element);
 
@@ -50,13 +50,14 @@ async function clima() {
 
 clima();
 
+/* FORMULARIO DE REGISTRO */
 function onClick(event) {
   event.preventDefault(); /* anula la opcion enviar del boton y permite procesar los datos */
 
   const mensaje = {
-    comercio: document.getElementById('comercio').value,
-    titular: document.getElementById('titular').value,
-    celular: document.getElementById('celular').value,
+    comercio: $('comercio').value,
+    titular: $('titular').value,
+    celular: $('celular').value,
   };
   console.log(mensaje);
 
@@ -76,12 +77,13 @@ function onClick(event) {
 }
 
 function cleanForm() {
-  let formulario = document.getElementById('formulario');
+  let formulario = $('formulario');
   formulario.reset();
 }
-function redirectUrl() {
+
+/* function redirectUrl() {
   window.location.href = 'https://google.com';
-}
+} */
 
 let boton = document.getElementById('enviar');
 boton.addEventListener('click', onClick);
